@@ -42,3 +42,4 @@ function createHTMLGamesPage(games) {
 
     allGamesContainer.innerHTML = gamesHTML;
 };
+

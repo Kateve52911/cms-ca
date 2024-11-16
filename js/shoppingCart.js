@@ -2,7 +2,7 @@ import { getCartContainer, getCartOrEmptyCart } from './utility/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const cart = getCartOrEmptyCart();
-    console.log(cart);
+    // console.log(cart);
     updateCartDisplay(cart);
 });
 

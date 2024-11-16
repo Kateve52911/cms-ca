@@ -15,9 +15,7 @@ export async function getGameDetails(url = "https://v2.api.noroff.dev/gamehub/")
     catch (error) {
         messageContainer.innerHTML = message;
     };
-
-}
-getGameDetails();
+};
 
 /**
  * This is to create an error message is there is something wrong with the API call. 

@@ -22,11 +22,25 @@ function filterGames(gameData, condition) {
     return filteredGamesHTML;
 };
 
-function generateSubheading(subheading) {
+/* function generateSubheading(subheading) {
     return `<div class="genre-container">
     <h2 class="h2-title-index-page">${subheading}</h2></div>`;
-}
+} */
 
+function generateSubheading(subheading) {
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'genre-container';
+        
+    const heading = document.createElement('h2');
+    heading.className = 'h2-title-index-page';
+    heading.textContent = subheading;
+
+    containerDiv.appendChild(heading);
+        
+   // Return the outerHTML of the element
+    return containerDiv.outerHTML;
+}
+    
 function generateGameHTML(game) {
     return `<div class="game-section">
     <img class="index-page-image" src="${game.image.url}" alt = "${game.title}">

@@ -1,5 +1,9 @@
-import { createMessage, getGameDetails, getCartOrEmptyCart } from './utility/utils.js';
-import { updateCartCounter } from './updateCartIcon.js';
+import {
+  createMessage,
+  getGameDetails,
+  getCartOrEmptyCart,
+} from "./utility/utils.js";
+import { updateCartCounter } from "./updateCartIcon.js";
 
 const resultsContainer = document.querySelector(".game-information");
 const headerContainer = document.querySelector(".game-header");
@@ -11,39 +15,40 @@ const id = paramsProductPage.get("id");
 const pageURL = "https://v2.api.noroff.dev/gamehub/" + id;
 
 /**
- * This function initialises the loading of the content onto the product page. 
- * It uses a setTimeout function to add the content on to the webpage. 
- * It also inclues a function to store the gamedata to the local storage for use in the shopping cart. 
+ * This function initialises the loading of the content onto the product page.
+ * It uses a setTimeout function to add the content on to the webpage.
+ * It also inclues a function to store the gamedata to the local storage for use in the shopping cart.
  */
 async function init() {
-    try {
-        const gameData = await getGameDetails(pageURL);
+  try {
+    const gameData = await getGameDetails(pageURL);
 
-        resultsContainer.innerHTML = `<div class="spinner-product-page"></div>`;
-        setTimeout(function () {
-            resultsContainer.innerHTML = "";
-            headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`
-            resultsContainer.innerHTML = createHTMLProductPage(gameData);
+    resultsContainer.innerHTML = `<div class="spinner-product-page"></div>`;
+    setTimeout(
+      function () {
+        resultsContainer.innerHTML = "";
+        headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`;
+        resultsContainer.innerHTML = createHTMLProductPage(gameData);
 
-            document.querySelector(".add-to-cart").addEventListener('click', () => {
-                addToShoppingCart(gameData);
-            });
-        }, 1000, gameData);
-    }
-    catch (error) {
-        messageContainer.innerHTML = message;
-    }
-};
-
-
+        document.querySelector(".add-to-cart").addEventListener("click", () => {
+          addToShoppingCart(gameData);
+        });
+      },
+      1000,
+      gameData
+    );
+  } catch (error) {
+    messageContainer.innerHTML = message;
+  }
+}
 
 /**
  * Creates the HTML for the product page
  * @param {*} gameData - the results fom the call to the API
- * @returns - the HTML for the product page. 
+ * @returns - the HTML for the product page.
  */
 function createHTMLProductPage(gameData) {
-    return `<div class="container-gamepage" data-id="${gameData.id}">
+  return `<div class="container-gamepage" data-id="${gameData.id}">
                 <img class="product-page-image " src="${gameData.image.url}" alt = "${gameData.title}">
                 <div class="info-gamepage"> 
                     <div><p>${gameData.genre}</p></div>
@@ -84,15 +89,15 @@ function createHTMLProductPage(gameData) {
 }
 
 function showCartPopup() {
-    const popup = document.getElementById('cart-popup');
-    popup.classList.add('show');
-    popup.classList.remove('hidden');
+  const popup = document.getElementById("cart-popup");
+  popup.classList.add("show");
+  popup.classList.remove("hidden");
 
-    // Hide the pop-up after 2 seconds
-    setTimeout(() => {
-        popup.classList.remove('show');
-        popup.classList.add('hidden');
-    }, 2000);
+  // Hide the pop-up after 2 seconds
+  setTimeout(() => {
+    popup.classList.remove("show");
+    popup.classList.add("hidden");
+  }, 2000);
 }
 
 /**
@@ -100,25 +105,25 @@ function showCartPopup() {
  * @param {*} gameData - the game information from the API call.
  */
 function addToShoppingCart(gameData) {
-    let cart = getCartOrEmptyCart();
+  let cart = getCartOrEmptyCart();
 
-    // Check if the game is already in the cart
-    const existingItem = cart.find(item => item.id === gameData.id);
+  // Check if the game is already in the cart
+  const existingItem = cart.find((item) => item.id === gameData.id);
 
-    if (existingItem) {
-        // If the game is already in the cart, increase its quantity
-        existingItem.quantity += 1;
-    } else {
-        // If the game is not in the cart, add it with quantity 1
-        gameData.quantity = 1;
-        cart.push(gameData);
-    }
+  if (existingItem) {
+    // If the game is already in the cart, increase its quantity
+    existingItem.quantity += 1;
+  } else {
+    // If the game is not in the cart, add it with quantity 1
+    gameData.quantity = 1;
+    cart.push(gameData);
+  }
 
-    // Update localStorage
-    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+  // Update localStorage
+  localStorage.setItem("shoppingCart", JSON.stringify(cart));
 
-    showCartPopup();
-    updateCartCounter();
+  showCartPopup();
+  updateCartCounter();
 }
 init();
 updateCartCounter();
