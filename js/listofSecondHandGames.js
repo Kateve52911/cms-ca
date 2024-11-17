@@ -1,7 +1,6 @@
 import { get2ndHandGameData } from "./api2ndHandGames.js";
 
 const data2ndHand = await get2ndHandGameData();
-//console.log(data2ndHand);
 
 const container2ndHandGames = document.querySelector(
   ".container-second-hand-games-page"
@@ -28,26 +27,21 @@ function createElement(tag, classNames = [], content = "", attributes = {}) {
 
 function create2ndHandSingleGameHTML(game) {
   const newProduct = createElement("div", ["game", "game2ndHand"]);
-  console.log(newProduct);
 
   const game2ndHandTitle = createElement(
     "h3",
     ["game-page-title-games"],
     game.name
   );
-  console.log(game2ndHandTitle);
 
   const game2ndHandImage = createElement("img", ["games-page-image"], "", {
     src: game.images[0].src,
     alt: game.images[0].alt,
   });
 
-  console.log(game2ndHandImage);
-
   const game2ndHandPrice = createElement("p", ["price-text"], "", {
     innerHTML: game.price_html,
   });
-  console.log(game2ndHandPrice);
 
   const buttons2ndHand = createElement("div", ["buttons-gamespage"]);
 

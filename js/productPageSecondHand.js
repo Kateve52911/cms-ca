@@ -11,7 +11,6 @@ const queryString = document.location.search;
 const paramsProductPage = new URLSearchParams(queryString);
 const id = paramsProductPage.get("id");
 const pageURL = API_URL + "/" + id;
-console.log(pageURL);
 
 async function initialise2ndHandGamePage() {
   const data2ndHandGame = await get2ndHandGameData(pageURL);
@@ -30,14 +29,10 @@ function createHTML2ndHandProductPage(gameData) {
   );
   container.setAttribute("data-id", gameData.id);
 
-  console.log(container);
-
   const img2ndHand = document.createElement("img");
   img2ndHand.classList.add("product-page-image");
   img2ndHand.setAttribute("src", gameData.images[0].src);
   img2ndHand.setAttribute("alt", gameData.images[0].alt);
-
-  console.log(img2ndHand);
 
   const infoDiv2ndHand = document.createElement("div");
   infoDiv2ndHand.classList.add("info-gamepage");
@@ -46,8 +41,6 @@ function createHTML2ndHandProductPage(gameData) {
   h22ndHand.textContent = gameData.name;
 
   infoDiv2ndHand.appendChild(h22ndHand);
-
-  console.log(infoDiv2ndHand);
 
   const fieldset2ndHand = document.createElement("fieldset");
   fieldset2ndHand.classList.add("game_page");
