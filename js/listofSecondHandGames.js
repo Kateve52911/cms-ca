@@ -49,10 +49,10 @@ function create2ndHandSingleGameHTML(game) {
   });
   console.log(game2ndHandPrice);
 
-  const buttons2ndHand = createElement("div", ["buttons-gamepage"]);
+  const buttons2ndHand = createElement("div", ["buttons-gamespage"]);
 
   const viewButton2ndHand = createElement("a", ["cta-gamespage"], "View", {
-    href: "product-page-second-hand.html?id=${game.id}",
+    href: `product-page-second-hand.html?id=${game.id}`,
   });
 
   const heartButton2ndHand = createElement("a", [
@@ -72,45 +72,3 @@ function create2ndHandSingleGameHTML(game) {
 
   return newProduct;
 }
-
-/*let newProduct = document.createElement("div");
-  newProduct.classList.add("game", "game2ndHand");
-
-  let game2ndHandTitle = document.createElement("h3");
-  game2ndHandTitle.classList.add("game-page-title-games");
-  game2ndHandTitle.textContent = game.name;
-
-  let game2ndHandImage = document.createElement("img");
-  game2ndHandImage.classList.add("games-page-image");
-  game2ndHandImage.src = game.images[0].src;
-  game2ndHandImage.alt = game.images[0].alt;
-
-  let game2ndHandPrice = document.createElement("p");
-  game2ndHandPrice.classList.add("price-text");
-  game2ndHandPrice.innerHTML = game.price_html;
-
-  let buttons2ndHand = document.createElement("div");
-  buttons2ndHand.classList.add("buttons-gamespage");
-
-  let viewButton2ndHand = document.createElement("a");
-  viewButton2ndHand.href = "product-page-second-hand.html?id=${game.id}";
-  viewButton2ndHand.classList.add("cta-gamespage");
-  viewButton2ndHand.textContent = "View";
-
-  let heartButton2ndHand = document.createElement("a");
-  heartButton2ndHand.classList.add(
-    "fa-solid",
-    "fa-heart",
-    "heart-icon-gamepage",
-    "cta-heart-gamespage"
-  );
-
-  buttons2ndHand.appendChild(viewButton2ndHand);
-  buttons2ndHand.appendChild(heartButton2ndHand);
-
-  newProduct.appendChild(game2ndHandTitle);
-  newProduct.appendChild(game2ndHandImage);
-  newProduct.appendChild(game2ndHandPrice);
-  newProduct.appendChild(buttons2ndHand);
-
-  container2ndHandGames.appendChild(newProduct);*/
