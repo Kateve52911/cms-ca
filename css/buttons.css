@@ -14,10 +14,10 @@
 .cta-login-contactpage,
 .cta-homepage,
 .cta-delete {
-    background-color: var(--orange);
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
+  background-color: var(--orange);
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 .cta-input,
@@ -27,18 +27,18 @@
 .cta-discount,
 .minus,
 .pluss {
-    border-style: none;
+  border-style: none;
 }
 
 .cta-discount,
 .cta-heart-gamespage {
-    padding: 14px;
+  padding: 14px;
 }
 
 .cta-gamespage {
-    width: 100px;
-    display: block;
-    padding: 10% 15%;
+  width: 100px;
+  display: block;
+  padding: 10% 15%;
 }
 
 .cta-read-more,
@@ -50,59 +50,59 @@
 .cta-delete,
 .minus,
 .pluss {
-    background-color: #3CAAF0;
+  background-color: #3caaf0;
 }
 
 a.cta-input-footer {
-    padding: 9px;
+  padding: 9px;
 }
 
 a.cta-login-contactpage {
-    margin-left: 8%;
+  margin-left: 8%;
 }
 
 a.cta-input-contactpage {
-    margin-left: 6%;
+  margin-left: 6%;
 }
 
 .cta-read-more,
 .cta-heart-gamespage {
-    transition-property: background-color;
+  transition-property: background-color;
 }
 
 .cta-read-more:hover {
-    background-color: var(--orange);
+  background-color: var(--orange);
 }
 
 .cta-heart-gamespage:hover {
-    background-color: var(--pinkish);
+  background-color: var(--pinkish);
 }
 
 .cta-input-footer {
-    padding: 5px;
+  padding: 5px;
 }
 
 .cta-homepage {
-    margin-top: 17%;
-    margin-bottom: 0%;
-    float: right;
-    padding: 5% 10%;
+  margin-top: 17%;
+  margin-bottom: 0%;
+  float: right;
+  padding: 5% 10%;
 }
 
 .checkout-button {
-    display: block;
-    text-align: center;
-    background-color: var(--head_foot_blue);
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+  display: block;
+  text-align: center;
+  background-color: var(--head_foot_blue);
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .minus,
 .pluss {
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: large;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: large;
 }

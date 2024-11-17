@@ -7,7 +7,7 @@ export async function get2ndHandGameData(apiURL = API_URL) {
     },
   });
   const data = await response.json();
-  console.log(data);
+  //console.log(data);
 
   return data;
 }
