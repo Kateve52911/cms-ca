@@ -1,143 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="contact">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/f6ecbff17b.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="contact" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f6ecbff17b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Gamehub | Contact</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-<body>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
     <header>
-        <div class="header-flex-conatainer">
-            <input type="checkbox" id="menu-checkbox">
-            <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars fa-2xl"></i></label>
-            <nav>
-                <a href="/">Home</a>
-                <a href="games.html">Games</a>
-                <a href="contact.html" class="active">Contact</a>
-                <a href="about.html">About</a>
-            </nav>
-            <a href="index.html"><img src="images/GameHub_Logo.png" alt="gamehub logo" class="logo-header"></a>
-            <div class="cart-container-header">
-                <a href="checkout-page.html"><i class="fa-solid fa-cart-shopping fa-xl icon-cart view-cart"><span
-                            class="shopping-cart" id="cart-counter">0</span></i></a>
-                <div class="cart-preview" id="cart-preview">
-                    <h4 class="h4-cart-preview">Shopping Cart</h4>
-                    <ul id="cart-items"></ul>
-                    <div class="checkout-button-preview"><a href="checkout-page.html"
-                            class="checkout-button">Checkout</a></div>`
-                </div>
+      <div class="header-flex-conatainer">
+        <input type="checkbox" id="menu-checkbox" />
+        <label for="menu-checkbox" class="hamburger-icon"
+          ><i class="fas fa-bars fa-2xl"></i
+        ></label>
+        <nav>
+          <a href="/">Home</a>
+          <a href="games.html">Games</a>
+          <a href="contact.html" class="active">Contact</a>
+          <a href="about.html">About</a>
+        </nav>
+        <a href="index.html"
+          ><img
+            src="images/GameHub_Logo.png"
+            alt="gamehub logo"
+            class="logo-header"
+        /></a>
+        <div class="cart-container-header">
+          <a href="checkout-page.html"
+            ><i class="fa-solid fa-cart-shopping fa-xl icon-cart view-cart"
+              ><span class="shopping-cart" id="cart-counter">0</span></i
+            ></a
+          >
+          <div class="cart-preview" id="cart-preview">
+            <h4 class="h4-cart-preview">Shopping Cart</h4>
+            <ul id="cart-items"></ul>
+            <div class="checkout-button-preview">
+              <a href="checkout-page.html" class="checkout-button">Checkout</a>
             </div>
-            <a href=" contact.html"><i class="fa-regular fa-user fa-xl icon-user"></i></a>
+            `
+          </div>
         </div>
+        <a href=" contact.html"
+          ><i class="fa-regular fa-user fa-xl icon-user"></i
+        ></a>
+      </div>
     </header>
     <main>
-        <div class="h1heading topbar-contactpage">
-            <div>
-                <h1>Contact us:</h1>
-            </div>
-            <div>
-                <img src="images/GameHub_Logo.png" alt="the logo for Gamehub" class="gameimage-contact">
-            </div>
+      <div class="h1heading topbar-contactpage">
+        <div>
+          <h1>Contact us:</h1>
         </div>
+        <div>
+          <img
+            src="images/GameHub_Logo.png"
+            alt="the logo for Gamehub"
+            class="gameimage-contact"
+          />
+        </div>
+      </div>
 
-        <p class="contact-info">Looking for help? Log in to your account to chat with our support staff. Or contact us
-            via our contact form: </p>
+      <p class="contact-info">
+        Looking for help? Log in to your account to chat with our support staff.
+        Or contact us via our contact form:
+      </p>
 
-        <div class="form-contactpage">
-            <div id="log-in-form">
-                <form action="POST">
-                    <label for="username" class="contact-page">Username:</label>
-                    <input type="text" name="username" id="username" class="username contact-input">
-                    <label for="password" class="contact-page">Password</label>
-                    <input type="password" name="password" id="password" class="password contact-input">
-                    <a href="contact.html" class="cta-login-contactpage">Log in</a>
-                </form>
-            </div>
-            <div id="contact-form">
-                <form action="POST">
-                    <label for="full-name" class="contact_page">Full name:</label>
-                    <input type="text" name="full-name" id="full-name" class="full-name contact-input">
-                    <label for="email" class="contact_page">Email</label>
-                    <input type="text" name="email" id="email" class="email contact-input">
-                    <label form="message" class="contact_page">Message:</label>
-                    <textarea id="message" name="message" rows="5" cols="30" class="contact-input"></textarea>
-                    <a href="contact.html" class="cta-input-contactpage">Submit</a>
-                </form>
-            </div>
+      <div class="form-contactpage">
+        <div id="log-in-form">
+          <form action="POST">
+            <label for="username" class="contact-page">Username:</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="username contact-input"
+            />
+            <label for="password" class="contact-page">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="password contact-input"
+            />
+            <a href="contact.html" class="cta-login-contactpage">Log in</a>
+          </form>
         </div>
+        <div id="contact-form">
+          <form action="POST">
+            <label for="full-name" class="contact_page">Full name:</label>
+            <input
+              type="text"
+              name="full-name"
+              id="full-name"
+              class="full-name contact-input"
+            />
+            <label for="email" class="contact_page">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="email contact-input"
+            />
+            <label form="message" class="contact_page">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              cols="30"
+              class="contact-input"
+            ></textarea>
+            <a href="contact.html" class="cta-input-contactpage">Submit</a>
+          </form>
+        </div>
+      </div>
 
-        <h3 class="direct-contact-header"> Or contact us directly:</h3>
-        <div class="container-direct-contact">
-            <div>
-                <i class="fa-solid fa-location-dot fa-2xl direct-contact-icons"></i>
-            </div>
-            <div>
-                <i class="fa-solid fa-envelope fa-2xl direct-contact-icons"></i>
-            </div>
-            <div>
-                <i class="fa-solid fa-phone fa-2xl direct-contact-icons"></i>
-            </div>
+      <h3 class="direct-contact-header">Or contact us directly:</h3>
+      <div class="container-direct-contact">
+        <div>
+          <i class="fa-solid fa-location-dot fa-2xl direct-contact-icons"></i>
         </div>
-        <div class="container-direct-contact">
-            <div>
-                <p>1234 Street
-                    Town, State
-                    09765
-                    Country</p>
-            </div>
-            <div>
-                <p>post@gamehub.com</p>
-            </div>
-            <div>
-                <p>09645725</p>
-            </div>
+        <div>
+          <i class="fa-solid fa-envelope fa-2xl direct-contact-icons"></i>
         </div>
+        <div>
+          <i class="fa-solid fa-phone fa-2xl direct-contact-icons"></i>
+        </div>
+      </div>
+      <div class="container-direct-contact">
+        <div>
+          <p>1234 Street Town, State 09765 Country</p>
+        </div>
+        <div>
+          <p>post@gamehub.com</p>
+        </div>
+        <div>
+          <p>09645725</p>
+        </div>
+      </div>
     </main>
-
     <footer>
-        <div class="contact-info-footer">
-            <div class="contact-text-footer">
-                <div class="info-footer">
-                    <p class="text-footer">Address:</p>
-                    <p class="text-footer">1234 Street,Town </p>
-                    <p class="text-footer">State, 09765, Country</p>
-                </div>
-                <div class="info-footer">
-                    <p class="text-footer">Email:</p>
-                    <p class="text-footer">post@gamehub.com</p>
-                </div>
-                <div class="info-footer">
-                    <p class="text-footer">Phone:</p>
-                    <p class="text-footer">09645725</p>
-                </div>
-            </div>
-            <div class="social-media">
-                <nav class="footer-social">
-                    <ul>
-                        <li><a href="contact.html"><i class="fa-solid fa-video fa-2xl icon-footer"></i></a></li>
-                        <li><a href="contact.html"><i class="fa-brands fa-facebook fa-2xl icon-footer"></i></a></li>
-                        <li><a href="contact.html"><i class="fa-brands fa-instagram fa-2xl icon-footer"></i></a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="newsletter">
-                <form action="FORM">
-                    <input type="email" name="newsletter" id="newsletter" placeholder="Join our newsletter!"
-                        class="input-newsletter">
-                    <a href="contact.html" class="cta-input-footer">Submit</a>
-                </form>
-            </div>
+      <div class="contact-info-footer">
+        <div class="contact-text-footer">
+          <div class="info-footer">
+            <p class="text-footer">Address:</p>
+            <p class="text-footer">1234 Street,Town</p>
+            <p class="text-footer">State, 09765, Country</p>
+          </div>
+          <div class="info-footer">
+            <p class="text-footer">Email:</p>
+            <p class="text-footer">post@gamehub.com</p>
+          </div>
+          <div class="info-footer">
+            <p class="text-footer">Phone:</p>
+            <p class="text-footer">09645725</p>
+          </div>
         </div>
+        <div class="social-media">
+          <nav class="footer-social">
+            <ul>
+              <li>
+                <a href="contact.html"
+                  ><i class="fa-solid fa-video fa-2xl icon-footer"></i
+                ></a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fa-brands fa-facebook fa-2xl icon-footer"></i
+                ></a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fa-brands fa-instagram fa-2xl icon-footer"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="newsletter">
+          <form action="FORM">
+            <input
+              type="email"
+              name="newsletter"
+              id="newsletter"
+              placeholder="Join our newsletter!"
+              class="input-newsletter"
+            />
+            <a href="contact.html" class="cta-input-footer">Submit</a>
+          </form>
+        </div>
+      </div>
     </footer>
-    <script type="module" src="js/productPage.js"></script>
     <script type="module" src="js/previewCart.js"></script>
-</body>
+  </body>
 </html>

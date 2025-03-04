@@ -25,8 +25,8 @@
           ><i class="fas fa-bars fa-2xl"></i
         ></label>
         <nav>
-          <a href="index.html">Home</a>
-          <a href="games.html">Games</a>
+          <a href="/">Home</a>
+          <a href="games.html" class="active">Games</a>
           <a href="contact.html">Contact</a>
           <a href="about.html">About</a>
         </nav>
@@ -36,9 +36,21 @@
             alt="gamehub logo"
             class="logo-header"
         /></a>
-        <a href="checkout-page.html"
-          ><i class="fa-solid fa-cart-shopping fa-xl icon-cart view-cart"></i
-        ></a>
+        <div class="cart-container-header">
+          <a href="checkout-page.html"
+            ><i class="fa-solid fa-cart-shopping fa-xl icon-cart view-cart"
+              ><span class="shopping-cart" id="cart-counter">0</span></i
+            ></a
+          >
+          <div class="cart-preview" id="cart-preview">
+            <h4 class="h4-cart-preview">Shopping Cart</h4>
+            <ul id="cart-items"></ul>
+            <div class="checkout-button-preview">
+              <a href="checkout-page.html" class="checkout-button">Checkout</a>
+            </div>
+            `
+          </div>
+        </div>
         <a href=" contact.html"
           ><i class="fa-regular fa-user fa-xl icon-user"></i
         ></a>
