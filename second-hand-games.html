@@ -1,116 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="games, Racing" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f6ecbff17b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Gamehub | Games</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="games, Racing">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/f6ecbff17b.js" crossorigin="anonymous"></script>
-    <title>Gamehub | Games </title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-</head>
-
-<body>
+  <body>
     <header>
-        <section class="header-flex-conatainer">
-            <input type="checkbox" id="menu-checkbox">
-            <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars fa-2xl"></i></label>
-            <nav>
-                <a href="/">Home</a>
-                <a href="games.html" class="active">Games</a>
-                <a href="contact.html">Contact</a>
-                <a href="about.html">About</a>
-            </nav>
-            <a href="index.html"><img src="images/GameHub_Logo.png" alt="gamehub logo" class="logo-header"></a>
-            <div class="cart-container-header">
-                <a href="checkout-page.html"><i class="fa-solid fa-cart-shopping fa-xl icon-cart view-cart"><span
-                            class="shopping-cart" id="cart-counter">0</span></i></a>
-                <div class="cart-preview" id="cart-preview">
-                    <h4 class="h4-cart-preview">Shopping Cart</h4>
-                    <ul id="cart-items"></ul>
-                    <div class="checkout-button-preview"><a href="checkout-page.html"
-                            class="checkout-button">Checkout</a></div>`
-                </div>
+      <div class="header-flex-conatainer">
+        <input type="checkbox" id="menu-checkbox" />
+        <label for="menu-checkbox" class="hamburger-icon"
+          ><i class="fas fa-bars fa-2xl"></i
+        ></label>
+        <nav>
+          <a href="/">Home</a>
+          <a href="games.html" class="active">Games</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+        </nav>
+        <a href="index.html"
+          ><img
+            src="images/GameHub_Logo.png"
+            alt="gamehub logo"
+            class="logo-header"
+        /></a>
+        <div class="cart-container-header">
+          <a href="checkout-page.html"
+            ><i class="fa-solid fa-cart-shopping fa-xl icon-cart view-cart"
+              ><span class="shopping-cart" id="cart-counter">0</span></i
+            ></a
+          >
+          <div class="cart-preview" id="cart-preview">
+            <h4 class="h4-cart-preview">Shopping Cart</h4>
+            <ul id="cart-items"></ul>
+            <div class="checkout-button-preview">
+              <a href="checkout-page.html" class="checkout-button">Checkout</a>
             </div>
+            `
+          </div>
+        </div>
 
-
-            <a href=" contact.html"><i class="fa-regular fa-user fa-xl icon-user"></i></a>
-            </div>
-        </section>
+        <a href=" contact.html"
+          ><i class="fa-regular fa-user fa-xl icon-user"></i
+        ></a>
+      </div>
     </header>
     <main>
-        <section class="topbar-gamespage">
-            <div id="top-section-games-page"></div>
-            <h2 class="h2-item-topbar">Explore our categories:</h2>
-        </section>
+      <div class="topbar-gamespage">
+        <div id="top-section-games-page"></div>
+        <h2 class="h2-item-topbar">Explore our categories:</h2>
+      </div>
 
-        <section>
-            <nav class="links-topbar-gamespage">
-                <li class="nav-gamespage"><a href="games.html"
-                        class="nav-gamespage text-topbar-games-page">New Games</a></li>
-                <li class="nav-gamespage"><a href="games.html"
-                        class="nav-gamespage text-topbar-games-page">Second-hand</a></li>
-            </nav>
-        </section>
+      <div>
+        <nav class="links-topbar-gamespage">
+          <li class="nav-gamespage">
+            <a href="games.html" class="nav-gamespage text-topbar-games-page"
+              >New Games</a
+            >
+          </li>
+          <li class="nav-gamespage">
+            <a href="games.html" class="nav-gamespage text-topbar-games-page"
+              >Second-hand</a
+            >
+          </li>
+        </nav>
+      </div>
 
-        <section class="h1heading-gamespage">
-            <h1>Our second-hand games:</h1>
-        </section>
+      <div class="h1heading-gamespage">
+        <h1>Our second-hand games:</h1>
+      </div>
 
-
-        <div class="container-second-hand-games-page"></div>
-        <div class="testing-container"></div>
-        <div class="message-container"></div>
-    
-
+      <div class="container-second-hand-games-page"></div>
+      <div class="testing-container"></div>
+      <div class="message-container"></div>
     </main>
     <footer>
-        <section class="contact-info-footer">
-            <section class="contact-text-footer">
-                <section class="info-footer">
-                    <p class="text-footer">Address:</p>
-                    <p class="text-footer">1234 Street,Town </p>
-                    <p class="text-footer">State, 09765, Country</p>
-                </section>
-                <section class="info-footer">
-                    <p class="text-footer">Email:</p>
-                    <p class="text-footer">post@gamehub.com</p>
-                </section>
-                <section class="info-footer">
-                    <p class="text-footer">Phone:</p>
-                    <p class="text-footer">09645725</p>
-                </section>
-            </section>
+      <div class="contact-info-footer">
+        <div class="contact-text-footer">
+          <div class="info-footer">
+            <p class="text-footer">Address:</p>
+            <p class="text-footer">1234 Street,Town</p>
+            <p class="text-footer">State, 09765, Country</p>
+          </div>
+          <div class="info-footer">
+            <p class="text-footer">Email:</p>
+            <p class="text-footer">post@gamehub.com</p>
+          </div>
+          <div class="info-footer">
+            <p class="text-footer">Phone:</p>
+            <p class="text-footer">09645725</p>
+          </div>
+        </div>
 
-            <section class="social-media">
-                <nav class="footer-social">
-                    <ul>
-                        <li><a href="contact.html"><i class="fa-solid fa-video fa-2xl icon-footer"></i></a></li>
-                        <li><a href="contact.html"><i class="fa-brands fa-facebook fa-2xl icon-footer"></i></a></li>
-                        <li><a href="contact.html"><i class="fa-brands fa-instagram fa-2xl icon-footer"></i></a></li>
-                    </ul>
-                </nav>
-            </section>
+        <div class="social-media">
+          <nav class="footer-social">
+            <ul>
+              <li>
+                <a href="contact.html"
+                  ><i class="fa-solid fa-video fa-2xl icon-footer"></i
+                ></a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fa-brands fa-facebook fa-2xl icon-footer"></i
+                ></a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fa-brands fa-instagram fa-2xl icon-footer"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-            <section class="newsletter">
-                <form action="FORM">
-                    <input type="email" name="newsletter" id="newsletter" placeholder="Join our newsletter!"
-                        class="input-newsletter">
-                    <a href="contact.html" class="cta-input-footer">Submit</a>
-                </form>
-            </section>
-
-        </section>
+        <div class="newsletter">
+          <form action="FORM">
+            <input
+              type="email"
+              name="newsletter"
+              id="newsletter"
+              placeholder="Join our newsletter!"
+              class="input-newsletter"
+            />
+            <a href="contact.html" class="cta-input-footer">Submit</a>
+          </form>
+        </div>
+      </div>
     </footer>
-
     <script type="module" src="js/listofSecondHandGames.js"></script>
     <script type="module" src="js/productPage.js"></script>
     <script type="module" src="js/previewCart.js"></script>
-</body>
-
+  </body>
 </html>
