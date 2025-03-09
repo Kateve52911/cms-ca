@@ -1,5 +1,7 @@
 import { get2ndHandGameData } from "./api2ndHandGames.js";
 import { API_URL } from "./constants.js";
+import { addToCart } from "./shoppingCart.js";
+import { formatCartItem } from "./previewCart.js";
 
 const productContainer = document.getElementById(
   "game-information-second-hand"
@@ -18,6 +20,11 @@ async function initialise2ndHandGamePage() {
 
   const productPage = createHTML2ndHandProductPage(data2ndHandGame);
   productContainer.appendChild(productPage);
+
+  document.querySelector(".add-to-cart").addEventListener("click", () => {
+    const cartItem = formatCartItem(data2ndHandGame);
+    addToCart(cartItem);
+  });
 }
 initialise2ndHandGamePage();
 
@@ -78,7 +85,6 @@ function createHTML2ndHandProductPage(gameData) {
   buttonBox.appendChild(addButton);
   buttonBox.appendChild(heartLink);
 
-  // Create the game-info div
   const gameInfoDiv = document.createElement("div");
   gameInfoDiv.classList.add("game-info");
 
@@ -97,7 +103,6 @@ function createHTML2ndHandProductPage(gameData) {
   infoDiv2ndHand.appendChild(buttonBox);
   infoDiv2ndHand.appendChild(gameInfoDiv);
 
-  // Create the cart-popup div
   const cartPopup = document.createElement("div");
   cartPopup.setAttribute("id", "cart-popup");
   cartPopup.classList.add("cart-popup", "hidden");

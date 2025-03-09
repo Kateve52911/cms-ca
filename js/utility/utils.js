@@ -47,6 +47,33 @@ export function getCartContainer() {
  */
 
 export function getCartOrEmptyCart() {
-  const cart = localStorage.getItem("shoppingCart");
-  return cart ? JSON.parse(cart) : []; // Return cart if it exists, or an empty array
+  let cart = localStorage.getItem("shoppingCart");
+  if (!cart) {
+    return []; // Return an empty cart if nothing is in localStorage
+  }
+  return JSON.parse(cart); // Parse the cart JSON if it exists
+}
+
+/**
+ * Updates the quantity displayed in the cart for a specific item.
+ * @param {*} itemId - The id of the item whose quantity needs to be updated.
+ * @param {*} cart - The current state of the cart.
+ */
+export function updateCartCounterForItem(itemId, cart) {
+  const item = cart.find((cartItem) => cartItem.id === itemId);
+
+  if (!item) {
+    console.error(`Item with ID ${itemId} not found in cart.`);
+    return;
+  }
+
+  // Select the quantity span for this item in the cart
+  const quantitySpan = document.querySelector(
+    `.cart-item-preview[data-id="${itemId}"] .item-quantity`
+  );
+
+  if (quantitySpan) {
+    // Update the quantity displayed
+    quantitySpan.textContent = item.quantity;
+  }
 }

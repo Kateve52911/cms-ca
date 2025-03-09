@@ -4,9 +4,25 @@
 @import "error-messages.css";
 @import "spinner.css";
 
-/* Body */
+html,
 body {
-  margin: 0%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 0; /* Header remains its natural height */
+}
+
+main {
+  flex: 1; /* Main takes up remaining space */
+}
+
+footer {
+  flex: 0; /* Footer remains its natural height */
 }
 
 /* Header & Footer */
@@ -134,17 +150,6 @@ input.input-newsletter {
   padding: 10px;
 }
 
-.h1heading,
-.h1heading-homepage {
-  padding: 20px;
-  margin: 0% 0% 3% 0%;
-}
-
-.h1heading-gamespage {
-  padding-top: 2px;
-  padding-bottom: 0px;
-}
-
 .topbar-homepage,
 .topbar-gamespage {
   padding-bottom: 1%;
@@ -234,7 +239,7 @@ li.nav-gamespage {
 }
 
 .header-flex-conatainer {
-  align-content: space-around;
+  justify-content: space-evenly;
 }
 
 .contact-info-footer,
@@ -291,15 +296,15 @@ li.nav-gamespage {
   background-image: url(../images/motorcross-medium.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: bottom;
-  background-position-y: top;
-  min-height: 70vh;
-  margin-left: 5%;
-  margin-right: 5%;
+  background-position-x: right;
+  background-position-y: center;
+  max-height: 100px;
+  margin: 0% 5%;
+  padding: 10% 0%;
 }
 
 #first-section-text {
-  padding-top: 33%;
+  padding-top: 20%;
 }
 
 .game-section {
@@ -367,9 +372,9 @@ li.nav-gamespage {
   background-image: url(../images/bluecar-medium.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: right;
-  background-position-y: bottom;
-  min-height: 50vh;
+  background-position-x: center;
+  background-position-y: center;
+  height: 100px;
   margin: 0% 5%;
   padding: 5%;
 }

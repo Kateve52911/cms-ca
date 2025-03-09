@@ -1,6 +1,7 @@
 import { createMessage, getGameDetails } from "./utility/utils.js";
-import { addToCart } from "./shoppingCart.js"; // Import cart-related functions
+import { addToCart } from "./shoppingCart.js";
 import { updateCartCounter } from "./updateCartIcon.js";
+import { formatCartItem } from "./previewCart.js";
 
 const resultsContainer = document.querySelector(".game-information");
 const headerContainer = document.querySelector(".game-header");
@@ -34,9 +35,9 @@ async function init() {
       headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`;
       resultsContainer.innerHTML = createHTMLProductPage(gameData);
 
-      // Attach event listener for adding to cart
       document.querySelector(".add-to-cart").addEventListener("click", () => {
-        addToCart(gameData); // Now using the function from cart.js
+        const cartItem = formatCartItem(gameData);
+        addToCart(cartItem);
       });
     }, 1000);
   } catch (error) {
@@ -91,4 +92,4 @@ function createHTMLProductPage(gameData) {
 }
 
 init();
-updateCartCounter(); // Update the cart counter when the page loads
+updateCartCounter();

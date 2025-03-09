@@ -6,10 +6,23 @@ import {
 } from "./shoppingCart.js";
 import { updateCartCounter } from "./updateCartIcon.js";
 
+export function formatCartItem(item) {
+  return {
+    id: item.id || "unknown-id",
+    title: item.title,
+    price: item.price || 0,
+    image: item.image
+      ? { url: item.image.url }
+      : { url: "images/default-image.png" },
+    category: item.category || "Misc",
+    quantity: item.quantity || 1,
+  };
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const cart = getCartOrEmptyCart();
   updateCartDisplay(cart);
-  updateCartCounter(); // Update the cart count in the header
+  updateCartCounter();
 });
 
 /**
@@ -17,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * @param {*} cart - the current cart items.
  */
 function updateCartDisplay(cart) {
-  initializeCartQuantities(cart); // Initialize quantities before rendering
+  initializeCartQuantities(cart);
 
   const cartContainer = document.querySelector("#cart-items");
 
@@ -33,12 +46,17 @@ function updateCartDisplay(cart) {
         (item) =>
           `<div class="cart-item-preview" data-id="${item.id}">
                 <div class="details-checkout-preview">
-                    <div><img src="${item.image.url}" alt="${item.title}" class="gameimage-checkout-cart-preview"></div>
+                    <div><img src="${
+                      item.image?.url || "images/default-image.png"
+                    }" alt="${item.title}" class="gameimage-checkout-cart">
+</div>
                     <div><h2>${item.title}</h2></div>
                     <div><p>$${item.price}</p></div>
                     <div class="buttons-checkout-details">
                         <button class="minus"> - </button>
-                        <span class="item-quantity">${item.quantity}</span> <!-- Quantity span -->
+                        <span class="item-quantity">${
+                          item.quantity
+                        }</span> <!-- Quantity span -->
                         <button class="pluss"> + </button>
                     </div>
                 </div>
@@ -51,29 +69,28 @@ function updateCartDisplay(cart) {
     </div>`;
   }
 
-  // Event delegation: Attach one listener to the parent container
   cartContainer.addEventListener("click", function (event) {
     const target = event.target;
 
-    // Check if the clicked element is a button with class "pluss"
     if (target.classList.contains("pluss")) {
       const itemId = target
         .closest(".cart-item-preview")
         .getAttribute("data-id");
       const item = cart.find((item) => item.id === itemId);
-      addToCart(item); // Increase the quantity
-      updateCartCounter(); // Update the cart count in the header
-      updateCartCounterForItem(itemId, cart); // Update the quantity in the span tag
+      addToCart(item);
+      updateCartCounter();
+      updateCartCounterForItem(itemId, getCartOrEmptyCart);
     }
 
-    // Check if the clicked element is a button with class "minus"
     if (target.classList.contains("minus")) {
       const itemId = target
         .closest(".cart-item-preview")
         .getAttribute("data-id");
-      removeFromCart(itemId); // Decrease the quantity or remove item
-      updateCartCounter(); // Update the cart count in the header
-      updateCartCounterForItem(itemId, cart); // Update the quantity in the span tag
+      removeFromCart(itemId);
+      const updatedCart = getCartOrEmptyCart(); // Get updated cart after removal
+      updateCartDisplay(updatedCart); // Refresh the UI
+      updateCartCounter();
+      updateCartCounterForItem(itemId, updatedCart);
     }
   });
 }
@@ -84,13 +101,16 @@ function updateCartDisplay(cart) {
  * @param {*} cart - The current state of the cart.
  */
 function updateCartCounterForItem(itemId, cart) {
-  const item = cart.find((item) => item.id === itemId);
-  if (item) {
-    const quantitySpan = document.querySelector(
-      `.cart-item-preview[data-id="${itemId}"] .item-quantity`
-    );
-    if (quantitySpan) {
-      quantitySpan.textContent = item.quantity; // Update the quantity in the span tag
-    }
+  const item = cart.find((cartItem) => cartItem.id === itemId);
+  if (!item) {
+    console.error(`Item with ID ${itemId} not found in cart.`);
+    return;
+  }
+
+  const quantitySpan = document.querySelector(
+    `.cart-item-preview[data-id="${itemId}"] .item-quantity`
+  );
+  if (quantitySpan) {
+    quantitySpan.textContent = item.quantity;
   }
 }
