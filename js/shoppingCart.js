@@ -12,14 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
 export function addToCart(newItem) {
   let cart = getCartOrEmptyCart();
 
-  // Check if the item already exists in the cart
   const existingItem = cart.find((item) => item.id === newItem.id);
 
   if (existingItem) {
-    // If item already exists, increase the quantity
     existingItem.quantity += 1;
   } else {
-    // If the item doesn't exist, add it with quantity of 1
     newItem.quantity = 1;
     cart.push(newItem);
   }
@@ -37,13 +34,13 @@ export function removeFromCart(itemId) {
   let cart = getCartOrEmptyCart();
 
   if (cart.length > 0) {
-    const index = cart.findIndex((item) => item.id === itemId);
+    const index = cart.findIndex((item) => String(item.id) === String(itemId));
 
     if (index !== -1) {
       if (cart[index].quantity > 1) {
-        cart[index].quantity -= 1; // Decrease quantity
+        cart[index].quantity -= 1;
       } else {
-        cart.splice(index, 1); // Remove item if quantity is 1
+        cart.splice(index, 1);
       }
     }
 
@@ -59,7 +56,7 @@ export function removeFromCart(itemId) {
 export function initializeCartQuantities(cart) {
   cart.forEach((item) => {
     if (!item.quantity) {
-      item.quantity = 1; // Set initial quantity to 1 if it doesn't exist
+      item.quantity = 1;
     }
   });
 }
@@ -69,7 +66,7 @@ export function initializeCartQuantities(cart) {
  * @param {*} cart - the current cart items.
  */
 function updateCartDisplay(cart) {
-  initializeCartQuantities(cart); // Initialize quantities before rendering
+  initializeCartQuantities(cart);
 
   const cartContainer = getCartContainer();
   if (cart.length === 0) {
@@ -102,13 +99,12 @@ function updateCartDisplay(cart) {
         </div>`;
   }
 
-  // Event listeners for increasing quantity
   document.querySelectorAll(".pluss").forEach((button) => {
     button.addEventListener("click", function () {
       const itemId =
         this.parentElement.parentElement.parentElement.getAttribute("data-id");
       const item = cart.find((item) => item.id === itemId);
-      addToCart(item); // Increase the quantity
+      addToCart(item);
     });
   });
 
@@ -117,7 +113,7 @@ function updateCartDisplay(cart) {
     button.addEventListener("click", function () {
       const itemId =
         this.parentElement.parentElement.parentElement.getAttribute("data-id");
-      removeFromCart(itemId); // Decrease the quantity or remove item
+      removeFromCart(itemId);
     });
   });
 }

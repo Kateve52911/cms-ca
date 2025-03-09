@@ -7,16 +7,34 @@ import {
 import { updateCartCounter } from "./updateCartIcon.js";
 
 export function formatCartItem(item) {
-  return {
+  console.log("Original item data:", item); // Debug the incoming item data
+
+  // Create properly formatted cart item
+  const formattedItem = {
     id: item.id || "unknown-id",
-    title: item.title,
+    title: item.title || item.name || "Unknown Title", // Handle both title and name properties
     price: item.price || 0,
-    image: item.image
-      ? { url: item.image.url }
-      : { url: "images/default-image.png" },
-    category: item.category || "Misc",
     quantity: item.quantity || 1,
+    category: item.category || "Misc",
+    image: {
+      url: "",
+    },
   };
+
+  // Handle different image structures
+  if (item.image && item.image.url) {
+    // Regular game format
+    formattedItem.image.url = item.image.url;
+  } else if (item.images && item.images.length > 0) {
+    // Secondhand game format
+    formattedItem.image.url = item.images[0].src;
+  } else {
+    // Default image if none found
+    formattedItem.image.url = "images/default-image.png";
+  }
+
+  console.log("Formatted cart item:", formattedItem); // Debug the formatted item
+  return formattedItem;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
