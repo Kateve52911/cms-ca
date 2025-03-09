@@ -25,7 +25,7 @@ In order to run the websites locally, one can do as follows:
 1. Clone the repo, this can be done for example, with the git command line tool (if installed):
 
 ```bash
-gh repo clone Kateve52911/javascript1-assignment
+gh repo clone Kateve52911/cms-ca
 ```
 
 2. Install Live Server in VS Code (or equivalent if using another IDE) and then it can be run from within.
