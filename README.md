@@ -1,4 +1,4 @@
-# Your project title
+# GameHub
 
 ![image](/images/Gamehub-index.jpg)
 
