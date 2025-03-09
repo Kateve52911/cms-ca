@@ -179,7 +179,7 @@ nav {
 nav a {
   text-decoration: none;
   display: block;
-  padding: 40px 10px;
+  padding: 30px 60px;
 }
 
 nav li {
@@ -383,6 +383,11 @@ li.nav-gamespage {
   display: inline-block;
 }
 
+.links-topbar-gamespage {
+  background-color: var(--pale_blue);
+  padding: 10px;
+}
+
 /* Product page */
 
 .info-gamepage {
@@ -459,7 +464,7 @@ label.contact-page {
 }
 
 .contact-info {
-  margin: 3% 10%;
+  margin: 3% 18%;
 }
 
 #log-in-form,
@@ -686,6 +691,7 @@ input.radio-checkout {
   nav {
     display: block;
     position: static;
+    width: 400px;
   }
 
   .hamburger-icon {

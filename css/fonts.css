@@ -60,15 +60,12 @@ nav a,
 .contact-info,
 .game-page-title-games,
 .h4-cart-preview,
-.h1heading-homepage {
-  font-size: x-large;
-}
-
+.h1heading-homepage,
 .game-link,
 .h1heading,
 .h1heading-gamespage,
 .h2-title-index-page {
-  font-size: xx-large;
+  font-size: larger;
 }
 
 #first-section-text,
